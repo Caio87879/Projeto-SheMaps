@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: #e6e6ee;
+  }
+
+  .loader {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: #5c4b83;
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+
+  .top {
+    width: 400px;
+    height: 400px;
+    top: -150px;
+    right: -120px;
+  }
+
+  .bottom {
+    width: 400px;
+    height: 400px;
+    bottom: -150px;
+    left: -120px;
+  }
+
+  /* logo sempre visível */
+  .image-container {
+    position: absolute;
+    width: 320px;
+    max-width: 35vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* fica acima dos círculos */
+  }
+
+  .image-container img {
+    width: 100%;
+    display: block;
+  }
+</style>
+</head>
+
+<body>
+
+<div class="loader">
+  <div class="circle top" id="topCircle"></div>
+  <div class="circle bottom" id="bottomCircle"></div>
+
+  <div class="image-container">
+    <img src="logo.png" alt="Logo">
+  </div>
+</div>
+
+<script>
+  const topCircle = document.getElementById("topCircle");
+  const bottomCircle = document.getElementById("bottomCircle");
+
+  let progress = 0;
+
+  const loading = setInterval(() => {
+    progress += 1;
+
+    let size = 400 + (progress * 12);
+
+    topCircle.style.width = size + "px";
+    topCircle.style.height = size + "px";
+
+    bottomCircle.style.width = size + "px";
+    bottomCircle.style.height = size + "px";
+
+    if (progress >= 100) {
+      clearInterval(loading);
+
+      // recuar suavemente
+      setTimeout(() => {
+        topCircle.style.width = "400px";
+        topCircle.style.height = "400px";
+
+        bottomCircle.style.width = "400px";
+        bottomCircle.style.height = "400px";
+      }, 300);
+    }
+
+  }, 30);
+</script>
+
+</body>
+</html>

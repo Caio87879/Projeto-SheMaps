@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa</title>
+
+<link rel="stylesheet" href="inicio.css">
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+
+<body>
+
+<div id="map"></div>
+
+<div class="search">
+  <input type="text" placeholder="Pesquise o local">
+</div>
+
+<div class="bottom-menu">
+  <div class="btn" onclick="setActive(this);openDashboard()">🌏</div>
+  <div class="btn active" onclick="setActive(this);openAlerts()">🚨</div>
+  <div class="btn" onclick="setActive(this);callSupport()">📞</div>
+  <div class="btn" onclick="setActive(this);openMenu()">☰</div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="inicio.js"></script>
+
+</body>
+</html>

@@ -28,7 +28,7 @@ function renderizar() {
     container.innerHTML = `
       <div class="alertas-vazio">
         <div class="vazio-icone">🗺️</div>
-        <p>Nenhum local perigoso salvo ainda.<br>Registre locais de risco pelo mapa.</p>
+        <p>Nenhum local perigoso salvo ou que foi passado ainda.<br>Registre locais de risco pelo mapa para sua segurança.</p>
         <a href="denuncia.html">+ Registrar local</a>
       </div>`;
     return;

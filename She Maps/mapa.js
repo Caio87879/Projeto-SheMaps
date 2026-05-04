@@ -46,14 +46,7 @@ function initMap() {
   });
 
   geocoder = new google.maps.Geocoder();
-
-  // Limpa pontos fora do Passarinho que possam ter ficado no localStorage
-  const salvos = getLocaisSalvos();
-  const apenasPassarinho = salvos.filter(l => l.lat < -7.960 && l.lat > -7.980 && l.lng < -34.905 && l.lng > -34.920);
-  if (apenasPassarinho.length !== salvos.length) {
-    localStorage.setItem("locaisSalvos", JSON.stringify(apenasPassarinho));
-  }
-
+ 
   construirHeatmap();
 
   map.addListener("zoom_changed", () => {

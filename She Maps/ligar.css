@@ -1,0 +1,76 @@
+.page-content {
+  display: flex; flex-direction: column; gap: 14px;
+  padding-bottom: 24px;
+}
+
+/* ── AVISO ── */
+.aviso-card {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: var(--roxo-claro);
+  border: 1px solid rgba(92,75,131,0.2);
+  border-radius: 14px; padding: 14px;
+  font-size: 13px; color: var(--roxo); line-height: 1.5;
+}
+.aviso-card span { font-size: 18px; flex-shrink: 0; }
+.aviso-card p { margin: 0; }
+
+/* ── CARDS DE LIGAÇÃO ── */
+.ligue-card {
+  display: flex; align-items: center; gap: 16px;
+  padding: 20px 18px; border-radius: 20px;
+  text-decoration: none; cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+.ligue-card:active { transform: scale(0.97); }
+
+.ligue-card.policia {
+  background: linear-gradient(135deg, #1a1530, #2c2445);
+  box-shadow: 0 6px 24px rgba(20,16,36,0.3);
+}
+.ligue-card.mulher {
+  background: linear-gradient(135deg, #5c4b83, #7a5fa0);
+  box-shadow: 0 6px 24px rgba(92,75,131,0.4);
+}
+
+.ligue-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 38px; font-weight: 500;
+  color: white; line-height: 1; flex-shrink: 0;
+}
+.ligue-info { flex: 1; }
+.ligue-nome { font-size: 16px; font-weight: 600; color: white; }
+.ligue-desc { font-size: 12px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+
+.ligue-icon {
+  width: 42px; height: 42px; flex-shrink: 0;
+  background: rgba(255,255,255,0.12);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── INFO EXTRA ── */
+.info-section {
+  background: var(--white);
+  border: 1.5px solid #e8e4f0;
+  border-radius: 18px; padding: 16px;
+  box-shadow: 0 2px 8px rgba(92,75,131,0.05);
+}
+.info-titulo {
+  font-size: 11px; font-weight: 600;
+  color: var(--text-soft); letter-spacing: 0.06em;
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.info-item {
+  display: flex; align-items: center; gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0edf8;
+}
+.info-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+.info-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 22px; font-weight: 500;
+  color: var(--roxo); flex-shrink: 0; width: 48px;
+}
+.info-nome { font-size: 14px; font-weight: 600; color: var(--text); }
+.info-desc { font-size: 12px; color: var(--text-soft); margin-top: 2px; }

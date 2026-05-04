@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Denúncia — Mapa Seguro</title>
+<link rel="stylesheet" href="global.css">
+<link rel="stylesheet" href="denuncia.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="page-header">
+  <div class="page-header-inner">
+    <a href="mapa.html" class="page-back">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5c4b83" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </a>
+    <div>
+      <div class="page-title">Registrar Denúncia</div>
+      <div class="page-sub">Anônima e segura — suas informações não serão expostas</div>
+    </div>
+  </div>
+</header>
+
+<!-- CONTEÚDO -->
+<div class="page-content">
+
+  <!-- TIPO DE LOCAL -->
+  <div class="campo">
+    <div class="field-label">Tipo de Local</div>
+    <div class="categorias">
+      <div class="cat-btn"><span>🛣️</span> Via Pública</div>
+      <div class="cat-btn"><span>🏠</span> Residência</div>
+      <div class="cat-btn"><span>🎉</span> Festa / Bar</div>
+      <div class="cat-btn"><span>🚌</span> Transporte</div>
+      <div class="cat-btn"><span>🏢</span> Trabalho</div>
+      <div class="cat-btn"><span>📍</span> Outro</div>
+    </div>
+  </div>
+
+  <!-- LOCALIZAÇÃO -->
+  <div class="campo">
+    <div class="field-label">Localização</div>
+    <input type="text" class="field-input" id="endereco-input" placeholder="Endereço do local…">
+    <div class="coord-box">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M1 12h4M19 12h4"/>
+      </svg>
+      Nenhuma localização definida
+    </div>
+  </div>
+
+  <!-- DESCRIÇÃO -->
+  <div class="campo">
+    <div class="field-label">O que aconteceu?</div>
+    <textarea class="field-input" id="desc-input" rows="4" placeholder="Descreva brevemente o ocorrido (opcional)…"></textarea>
+  </div>
+
+</div>
+
+<!-- MENU INFERIOR -->
+<nav class="bottom-nav">
+  <a href="mapa.html" class="nav-btn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
+      <line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/>
+    </svg>
+    <span class="nav-label">Mapa</span>
+  </a>
+  <a href="alerta.html" class="nav-btn">
+    <div class="badge-dot" id="badge-dot"></div>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+      <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+    </svg>
+    <span class="nav-label">Alertas</span>
+  </a>
+  <a href="ligar.html" class="nav-btn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3-8.59A2 2 0 0 1 3.67 1.4h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.04a16 16 0 0 0 6 6l1-1a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+    <span class="nav-label">Ligar</span>
+  </a>
+  <a href="denuncia.html" class="nav-btn active">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+      <line x1="4" y1="22" x2="4" y2="15"/>
+    </svg>
+    <span class="nav-label">Denunciar</span>
+  </a>
+</nav>
+
+</body>
+</html>

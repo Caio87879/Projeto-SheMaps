@@ -98,9 +98,16 @@
         bottomCircle.style.width = "400px";
         bottomCircle.style.height = "400px";
       }, 300);
-    }
+ setTimeout(() => {
+        loader.classList.add("fade-out");
+      }, 700);
 
+      setTimeout(() => {
+        window.location.href = "mapa.html";
+      }, 1200);
+    }
   }, 30);
+
 </script>
 
 </body>

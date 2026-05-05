@@ -31,20 +31,31 @@
   <div class="campo">
     <div class="field-label">Tipo de Local</div>
     <div class="categorias">
-      <div class="cat-btn"><span>🛣️</span> Via Pública</div>
-      <div class="cat-btn"><span>🏠</span> Residência</div>
-      <div class="cat-btn"><span>🎉</span> Festa / Bar</div>
-      <div class="cat-btn"><span>🚌</span> Transporte</div>
-      <div class="cat-btn"><span>🏢</span> Trabalho</div>
-      <div class="cat-btn"><span>📍</span> Outro</div>
+      <div class="cat-btn" onclick="selCat(this,'rua')"><span>🛣️</span> Via Pública</div>
+      <div class="cat-btn" onclick="selCat(this,'casa')"><span>🏠</span> Residência</div>
+      <div class="cat-btn" onclick="selCat(this,'festa')"><span>🎉</span> Festa / Bar</div>
+      <div class="cat-btn" onclick="selCat(this,'transporte')"><span>🚌</span> Transporte</div>
+      <div class="cat-btn" onclick="selCat(this,'trabalho')"><span>🏢</span> Trabalho</div>
+      <div class="cat-btn" onclick="selCat(this,'outro')"><span>📍</span> Outro</div>
     </div>
   </div>
 
   <!-- LOCALIZAÇÃO -->
   <div class="campo">
     <div class="field-label">Localização</div>
-    <input type="text" class="field-input" id="endereco-input" placeholder="Endereço do local…">
-    <div class="coord-box">
+    <div class="loc-btns">
+      <button class="btn-primary" onclick="usarGPS()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+          <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M1 12h4M19 12h4"/>
+        </svg>
+        Minha localização
+      </button>
+      <button class="btn-outline" onclick="abrirMiniMapa()">
+        📍 Marcar no mapa
+      </button>
+    </div>
+    <input type="text" class="field-input" id="endereco-input" placeholder="Ou digitar endereço…" oninput="buscarEndereco(this.value)">
+    <div class="coord-box" id="coord-display">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
         <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M1 12h4M19 12h4"/>
       </svg>
@@ -57,6 +68,18 @@
     <div class="field-label">O que aconteceu?</div>
     <textarea class="field-input" id="desc-input" rows="4" placeholder="Descreva brevemente o ocorrido (opcional)…"></textarea>
   </div>
+
+  <!-- AÇÕES -->
+  <button class="btn-danger" onclick="enviar()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round">
+      <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+      <line x1="4" y1="22" x2="4" y2="15"/>
+    </svg>
+    Enviar Denúncia
+  </button>
+  <a href="mapa.html" class="btn-outline" style="margin-top:10px;text-align:center;display:block;text-decoration:none;padding:13px;">
+    Cancelar
+  </a>
 
 </div>
 
@@ -91,6 +114,11 @@
     <span class="nav-label">Denunciar</span>
   </a>
 </nav>
+
+<div class="toast" id="toast"></div>
+
+<script src="denuncia.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6gx6gzFzWnSQBsmUvwcKPPkWP8Rqasq0&libraries=visualization&callback=initGeocoder" async defer></script>
 
 </body>
 </html>

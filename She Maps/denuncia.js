@@ -67,7 +67,7 @@ function definirLocal(lat, lng, noMiniMapa = false) {
       position: { lat, lng }, map: miniMap,
       icon: {
         path: google.maps.SymbolPath.CIRCLE,
-        scale: 10, fillColor: "#e05c5c", fillOpacity: 1,
+        scale: 10, fillColor: "#0011ff", fillOpacity: 1,
         strokeColor: "white", strokeWeight: 2
       },
       animation: google.maps.Animation.DROP
